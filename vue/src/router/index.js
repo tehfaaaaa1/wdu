@@ -37,25 +37,6 @@ const routes = [
       },
     ],
   },
-  {
-    path: "/reg",
-    redirect: "/Register",
-    name: "Reg",
-    component: AuthLayout,
-    meta: { isGuest: true },
-    children: [
-      {
-        path: "/login",
-        Name: "Login",
-        component: Login,
-      },
-      {
-        path: "/Register",
-        Name: "Register",
-        component: Register,
-      },
-    ],
-  },
 ];
 
 const router = createRouter({

@@ -13,8 +13,10 @@
 
 <script setup>
 </script>
+<script>
 export default {
     name: "Dashboard"
 }
+</script>
 <styles>
 </styles>

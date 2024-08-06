@@ -120,7 +120,7 @@
         src="/img/Rectangle 1471.png"
         alt=""
         class="absolute"
-        style="top: -150px; right: -124px"
+        style="top: -150px; right: -110px"
       />
       <img
         src="/img/hand-drawn-business-planning1.png"
@@ -131,16 +131,16 @@
   </div>
 </template>
 <script>
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/vue";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+// import {
+//   Disclosure,
+//   DisclosureButton,
+//   DisclosurePanel,
+//   Menu,
+//   MenuButton,
+//   MenuItem,
+//   MenuItems,
+// } from "@headlessui/vue";
+// import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { computed } from "vue";
