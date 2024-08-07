@@ -11,7 +11,7 @@
       </div>
 
       <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="#" method="POST">
+        <form class="space-y-6" @submit="register">
           <div>
             <div class="mt-2 relative">
               <input
@@ -19,9 +19,9 @@
                 name="user"
                 type="text"
                 autocomplete=""
-                required
+                required="" v-model="user.name" 
                 class="block w-full rounded-md border-0 py-1.5 text-primary shadow-sm ring-1 ring-inset ring-primary placeholder:text-primary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                placeholder="Username"
+                placeholder="Full Name"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@
                 name="email"
                 type="email"
                 autocomplete="email"
-                required
+                required="" v-model="user.email"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-primary placeholder:text-primary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="Email Address"
               />
@@ -77,9 +77,37 @@
                 name="password"
                 type="password"
                 autocomplete="current-password"
-                required
+                required="" v-model="user.password"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-primary placeholder:text-primary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="Password"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 absolute right-3 top-1.5 text-primary"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between"></div>
+            <div class="relative">
+              <input
+                id="password_confirmation"
+                name="password_confirmation"
+                type="password"
+                autocomplete="current-password_confirmation"
+                required="" v-model="user.password_confirmation"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-primary placeholder:text-primary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                placeholder="Password Confirmation"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,38 +158,28 @@
     </div>
   </div>
 </template>
-<script>
-// import {
-//   Disclosure,
-//   DisclosureButton,
-//   DisclosurePanel,
-//   Menu,
-//   MenuButton,
-//   MenuItem,
-//   MenuItems,
-// } from "@headlessui/vue";
-// import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
-import { useStore } from "vuex";
-import { useRouter } from "vue-router";
-import { computed } from "vue";
 
-export default {
-  name: "Register",
-  setup() {
-    const store = useStore();
-    const router = useRouter();
+<script setup>
+import store from '../store';
+import {useRouter} from "vue-router";
+import { ref } from 'vue';
 
-    function login() {
-      store.commit("login");
+const router = useRouter();
+const user = ref({
+  name: '',
+  email: '',
+  password: '',
+  password_confirmation: ''
+});
+
+function register(ev){
+  ev.preventDefault();
+  store
+    .dispatch('register', user.value)
+    .then((res) => {
       router.push({
-        name: "Auth",
-      });
-    }
-
-    return {
-      user: computed(() => store.state.user.data),
-      login,
-    };
-  },
-};
+        name: 'Dashboard'
+      })
+    })
+}
 </script>
