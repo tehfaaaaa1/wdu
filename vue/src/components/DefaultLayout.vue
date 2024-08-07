@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-full">
+  <div class="min-h-full sticky">
     <Disclosure as="nav" class="bg-primary" v-slot="{ open }">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -12,7 +12,7 @@
                 <a v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[
                   item.current
                     ? 'bg-white text-secondary border-b-2 border-b-secondary'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    : 'text-white hover:bg-secondary hover:text-white',
                   'rounded-md px-3 py-2 text-sm font-medium',
                 ]" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
               </div>
@@ -26,8 +26,8 @@
                 <div>
                   <MenuButton
                     class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                    <span class="absolute -left-14">
-                      <p class="text-white">Admin</p>
+                    <span class="absolute -left-32 truncate">
+                      <p class="text-white font-medium">Welcome, Admin</p>
                     </span>
                     <span class="sr-only">Open user menu</span>
                     <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt="" />
@@ -54,7 +54,7 @@
 
             <!-- Mobile menu button -->
             <DisclosureButton
-              class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              class="relative inline-flex items-center justify-center rounded-md p-2 bg-secondary text-white hover:bg-white hover:text-secondary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
               <span class="absolute -inset-0.5"></span>
               <span class="sr-only">Open main menu</span>
               <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
