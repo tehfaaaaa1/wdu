@@ -9,20 +9,18 @@ const store = createStore({
   },
   getters: {},
   actions: {
-    register({commit}, user){
-      return fetch (`http://localhost:8000/api/register`, {
+    async register({commit}, user){
+      const res = await fetch(`http://localhost:5173/api/register`, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
         method: "POST",
         body: JSON.stringify(user),
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          commit("setUser", res);
-          return res;
-        })
+      });
+      const res_1 = await res.json();
+      commit("setUser", res_1);
+      return res_1;
     },
   },
   mutations: {
