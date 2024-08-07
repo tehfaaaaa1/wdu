@@ -3,14 +3,18 @@ import { createStore } from "vuex";
 const store = createStore({
   state: {
     user: {
-      data: { },
+      data: {},
       token: sessionStorage.getItem("TOKEN"),
     },
   },
   getters: {},
   actions: {
-    async register({commit}, user){
-      const res = await fetch(`http://localhost:5173/api/register`, {
+    async register({ commit }, user) {
+      // const axiosInstance = axios.create({
+      //   baseURL: 'http://localhost:8000/api',
+      // });
+
+      const res = await fetch('http://localhost:8000/api/register', {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -27,12 +31,12 @@ const store = createStore({
     logout: (state) => {
       state.user.token = null;
       state.user.data = {};
+      sessionStorage.clear();
     },
     setUser: (state, userData) => {
       state.user.token = userData.token;
       state.user.data = userData.user;
       sessionStorage.setItem('TOKEN', userData.token);
-
     }
   },
   modules: {},

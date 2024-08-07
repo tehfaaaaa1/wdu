@@ -118,9 +118,9 @@ export default {
     const router = useRouter();
 
     function login() {
-      store.commit("login");
+      store.commit("dashboard");
       router.push({
-        name: "login",
+        name: "Dashboard",
       });
     }
 
