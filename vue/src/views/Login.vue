@@ -15,11 +15,10 @@
           <div>
             <div class="mt-2 relative">
               <input
-                id="user"
-                name="user"
+                id="email"
+                name="email"
                 type="text"
                 autocomplete=""
-                required
                 class="block w-full rounded-md border-0 py-1.5 text-primary shadow-sm ring-1 ring-inset ring-primary placeholder:text-primary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="Username / Email"
               />
@@ -48,7 +47,6 @@
                 name="password"
                 type="password"
                 autocomplete="current-password"
-                required
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-primary placeholder:text-primary focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="Password"
               />
@@ -72,12 +70,13 @@
             <!-- <p class="hover:underline">Don't Have Account? <a class="text-primary" @click="reg">Sign Up</a></p> -->
           </div>
           <div>
-            <button
+            <a
               type="submit"
+              @click="login"
               class="flex w-full justify-center rounded-md bg-secondary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-ijo-terang focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition"
             >
               Login
-            </button>
+            </a>
           </div>
         </form>
       </div>
@@ -118,16 +117,16 @@ export default {
     const store = useStore();
     const router = useRouter();
 
-    function reg() {
+    function login() {
       store.commit("login");
       router.push({
-        name: "Auth",
+        name: "login",
       });
     }
 
     return {
       user: computed(() => store.state.user.data),
-      reg,
+      login,
     };
   },
 };

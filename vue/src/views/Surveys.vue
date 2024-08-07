@@ -29,7 +29,7 @@
             Created Survey at: 05-08-2024
           </p>
           <div class="flex justify-center">
-            <button class="p-3 bg-secondary text-white rounded-md text-sm">
+            <button class="p-3 bg-secondary text-white rounded-md text-sm hover:bg-transparent hover:text-primary hover:outline hover:outline-primary transition hover:duration-200">
               Check Survey
             </button>
           </div>
@@ -46,7 +46,7 @@
             Created Survey at: 05-08-2024
           </p>
           <div class="flex justify-center">
-            <button class="p-3 bg-secondary text-white rounded-md text-sm">
+            <button class="p-3 bg-secondary text-white rounded-md text-sm hover:bg-transparent hover:text-primary hover:outline hover:outline-primary transition hover:duration-200">
               Check Survey
             </button>
           </div>
