@@ -17,8 +17,8 @@
 </template>
 
 <script setup>
+import store from '../store';
 import PageComponent from '../components/PageComponent.vue';
-
 </script>
 
 <styles>
