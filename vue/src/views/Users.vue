@@ -73,10 +73,10 @@
                 <th scope="col" class="px-6 py-3">
                   Email
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-3 hidden sm:block">
                   Password
                 </th>
-                <th scope="col" class="px-6 py-3 w-1/6">
+                <th scope="col" class="px-6 py-3 md:w-1/6">
                   Action
                 </th>
               </tr>
@@ -90,7 +90,7 @@
                 <td class="px-6 py-4">
                   Silver
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-6 py-4 hidden sm:block">
                   Laptop
                 </td>
                 <td class="px-6 py-4">
@@ -106,7 +106,7 @@
                 <td class="px-6 py-4">
                   White
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-6 py-4 hidden sm:block">
                   Laptop PC
                 </td>
                 <td class="px-6 py-4">
@@ -121,7 +121,7 @@
                 <td class="px-6 py-4">
                   Black
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-6 py-4 hidden sm:block">
                   Accessories
                 </td>
                 <td class="px-6 py-4">
