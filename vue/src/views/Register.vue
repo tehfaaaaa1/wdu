@@ -102,7 +102,7 @@ const user = ref({
 });
 
 function register(ev) {
-  ev.preventDefault();
+  // ev.preventDefault();
   store
     .dispatch('register', user.value).then((res) => {
        router.push({
