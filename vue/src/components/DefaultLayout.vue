@@ -144,10 +144,12 @@ export default {
     const navigation = [
       { name: "Dashboard", href: "/", },
       { name: "Survey Page", href: "/surveys", },
-      { name: "Projects", href: "#", current: false },
+      { name: "Users", href: "/users", current: false },
       { name: "Calendar", href: "#", current: false },
       { name: "Reports", href: "#", current: false },
     ];
+
+    
 
     return {
       user: computed(() => store.state.user.data),

@@ -6,6 +6,7 @@ import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Surveys from "../views/Surveys.vue";
 import store from "../store";
+import Users from "../views/Users.vue";
 
 const routes = [
   {
@@ -16,6 +17,7 @@ const routes = [
     children: [
       { path: "/dashboard", name: "Dashboard", component: Dashboard },
       { path: "/surveys", name: "Surveys", component: Surveys },
+      { path: "/users", name: "Users", component: Users },
     ],
   },
   {
