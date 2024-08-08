@@ -144,7 +144,7 @@ export default {
     const navigation = [
       { name: "Dashboard", href: "/", },
       { name: "Survey Page", href: "/surveys", },
-      { name: "Users", href: "/users", current: false },
+      { name: "Users", href: "/users", },
       { name: "Calendar", href: "#", current: false },
       { name: "Reports", href: "#", current: false },
     ];
