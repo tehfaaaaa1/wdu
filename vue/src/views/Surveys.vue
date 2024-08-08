@@ -4,7 +4,19 @@
 
   <main class="min-h-screen bg-repeat" style="background-image: url(/img/bg-dashboard.png);">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div class="flex justify-between mb-6">
+        <div class="">
+          <button
+            class="bg-primary text-white font-medium px-6 py-2 rounded-md border-2 hover:bg-white hover:text-primary hover:border-primary transition">Add
+            Survey</button>
+        </div>
+        <div class="">
+          <input type="text" name="search" id="search" placeholder="Search" class="rounded-md border-primary">
+        </div>
+      </div>
+
       <div class="container mx-auto flex flex-wrap justify-center lg:justify-evenly xl:justify-between gap-5">
+
         <div class="rounded-md shadow-lg outline outline-2 outline-gray-300 w-full md:w-330 px-5 py-4 bg-white">
           <h1 class="text-2xl text-center mb-2 font-medium">Survey</h1>
           <p class="my-3 text-base text-justify">
@@ -60,7 +72,8 @@
             </transition>
           </Menu>
         </div>
-        <div class="relative rounded-md shadow-lg outline outline-2 outline-gray-300 w-full md:w-330 px-5 py-4">
+
+        <div class="rounded-md shadow-lg outline outline-2 outline-gray-300 w-full md:w-330 px-5 py-4 bg-white">
           <h1 class="text-2xl text-center mb-2 font-medium">Survey</h1>
           <p class="my-3 text-base text-justify">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
@@ -116,7 +129,7 @@
           </Menu>
         </div>
 
-        <div class="rounded-md shadow-lg outline outline-2 outline-gray-300 w-full md:w-330 px-5 py-4">
+        <div class="rounded-md shadow-lg outline outline-2 outline-gray-300 w-full md:w-330 px-5 py-4 bg-white">
           <h1 class="text-2xl text-center mb-2 font-medium">Survey</h1>
           <p class="my-3 text-base text-justify">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
