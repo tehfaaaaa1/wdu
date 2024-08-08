@@ -5,12 +5,11 @@
   <main class="min-h-screen bg-repeat" style="background-image: url(/img/bg-dashboard.png);">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <div class="flex justify-between mb-6">
-        <div class="">
-          <button
-            class="bg-primary text-white font-medium px-6 py-2 rounded-md border-2 hover:bg-white hover:text-primary hover:border-primary transition">Add
-            User
-          </button>
-        </div>
+
+        <a :href="'/CreateUsers'" 
+          class="bg-primary text-white font-medium px-6 py-2 rounded-md border-2 hover:bg-white hover:text-primary hover:border-primary transition">Add
+          User
+        </a>
 
         <Menu as="div" class="relative inline-block text-left">
           <div class="flex justify-center">
@@ -82,8 +81,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr
-                class="bg-white border-b hover:bg-gray-50">
+              <tr class="bg-white border-b hover:bg-gray-50">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                   Apple MacBook Pro 17"
                 </th>
@@ -98,8 +96,7 @@
                   <a href="#" class="font-medium text-red-600 hover:underline">Delete</a>
                 </td>
               </tr>
-              <tr
-                class="bg-white border-b hover:bg-gray-50">
+              <tr class="bg-white border-b hover:bg-gray-50">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                   Microsoft Surface Pro
                 </th>
@@ -155,6 +152,7 @@ import PageComponent from "../components/PageComponent.vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { computed } from "vue";
+import CreateUsers from "./CreateUsers.vue";
 </script>
 
 <styles>
