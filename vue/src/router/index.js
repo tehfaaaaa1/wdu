@@ -7,6 +7,8 @@ import Register from "../views/Register.vue";
 import Surveys from "../views/Surveys.vue";
 import store from "../store";
 import Users from "../views/Users.vue";
+import CreateUsers from "../views/CreateUsers.vue";
+
 
 const routes = [
   {
@@ -18,6 +20,7 @@ const routes = [
       { path: "/dashboard", name: "Dashboard", component: Dashboard },
       { path: "/surveys", name: "Surveys", component: Surveys },
       { path: "/users", name: "Users", component: Users },
+      { path: "/createusers", name: "CreateUsers", component: CreateUsers },
     ],
   },
   {
