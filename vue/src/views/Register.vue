@@ -105,7 +105,7 @@ function register(ev) {
   ev.preventDefault();
   store
     .dispatch('register', user.value).then((res) => {
-      router.push({
+       router.push({
         name: 'Dashboard'
       })
     })

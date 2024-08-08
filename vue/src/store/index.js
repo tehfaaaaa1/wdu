@@ -15,11 +15,11 @@ const store = createStore({
       // });
 
       const res = await fetch('http://localhost:8000/api/register', {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        method: "POST",
         body: JSON.stringify(user),
       });
       const res_1 = await res.json();
