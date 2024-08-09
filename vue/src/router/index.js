@@ -15,7 +15,7 @@ const routes = [
     path: "/",
     redirect: "/dashboard",
     component: DefaultLayout,
-    meta: { requiresAuth: true },
+    // meta: { requiresAuth: true },
     children: [
       { path: "/dashboard", name: "Dashboard", component: Dashboard },
       { path: "/surveys", name: "Surveys", component: Surveys },

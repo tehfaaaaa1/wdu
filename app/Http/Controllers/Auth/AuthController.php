@@ -58,4 +58,9 @@ class AuthController extends Controller
     public function me(Request $request){
         return response(['data'=> auth()->user()]);
     }
+    public function logout() {
+        $user = auth()->user();
+        $user->tokens()->delete();
+        return response(['Message' => 'Logout Succes']);
+    }
 }
