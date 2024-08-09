@@ -30,14 +30,14 @@ class AuthController extends Controller
         ]);
 
         return response()->json(['message' => 'User successfully registered'], 201);
-
     }
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-        ]);  
-        
+        ]);
+
         $user = User::where('email', $request->email)->first();
 
         if (! $user || ! Hash::check($request->password, $user->password)) {
@@ -54,9 +54,11 @@ class AuthController extends Controller
         $token = $user->createToken('token')->plainTextToken;
         $user->token = $token;
         return response(['data' => $user]);
-    }   
-    public function me(Request $request){
-        return response(['data'=> auth()->user()]);
+    }
+    public function me(Request $request)
+    {
+        // Works as expected.
+        return response(['data' => auth()->user()]);
     }
     public function logout() {
         $user = auth()->user();
